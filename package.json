@@ -1,0 +1,39 @@
+{
+  "name": "test-msw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "babel-jest": "^26.6.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest": "^26.6.3",
+    "msw": "^0.27.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "use-http": "^1.0.17"
+  },
+  "jest": {
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/testSetup.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@testing-library/dom": "^7.30.0"
+  }
+}
