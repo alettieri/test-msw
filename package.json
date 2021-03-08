@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "DEBUG=RequestInterceptor,'http override',XHR jest"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +17,8 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "jest": "^26.6.3",
     "msw": "^0.27.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "use-http": "^1.0.17"
   },
   "jest": {

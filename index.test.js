@@ -1,20 +1,20 @@
 import React from 'react'
-import {shallow} from 'enzyme'
+import {mount} from 'enzyme'
 import {waitFor} from '@testing-library/dom'
 import server, {rest} from './testServer'
 
 import Component from '.'
 
 describe('<Component />', () => {
-
   it('should render', async () => {
-    const wrapper = shallow(<Component />)
+    const wrapper = mount(<Component />)
+    const requestHandler = rest.get(
+      '/resource/:resourceId',
+      (req, res, ctx) => res(ctx.json({id: '1'}))
+    )
 
     server.use(
-      rest.get(
-        '/resource/:resourceId',
-        (req, res, ctx) => res(ctx.json({id: '1'}))
-      )
+      requestHandler
     )
 
     await waitFor(() => {
@@ -22,7 +22,9 @@ describe('<Component />', () => {
     })
 
     await waitFor(() => {
-      expect(wrapper.text()).toEqual('1')
+      expect(wrapper.text()).not.toEqual('Loading')
     })
+    
+    expect(wrapper.text()).toEqual('1')
   })
 })
