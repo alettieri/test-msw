@@ -29,11 +29,13 @@
       "<rootDir>/testSetup.js"
     ],
     "setupFiles": [
+      "whatwg-fetch",
       "<rootDir>/jest.setup.js"
     ]
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@testing-library/dom": "^7.30.0"
+    "@testing-library/dom": "^7.30.0",
+    "whatwg-fetch": "^3.6.2"
   }
 }
